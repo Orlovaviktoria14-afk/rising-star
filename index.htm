@@ -1,19 +1,125 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
-    <title>Мой сайт</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Мой маленький сайт</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #fff8fb, #ffe6f0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5c3044;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 70px 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(180, 100, 130, 0.18);
+        }
+
+        h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+            color: #c75b82;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #8b596c;
+            margin-bottom: 40px;
+        }
+
+        button {
+            border: none;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-family: Georgia, serif;
+            color: white;
+            background: #d8799b;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(200, 100, 140, 0.25);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #c75b82;
+        }
+
+        #secret {
+            display: none;
+            margin-top: 35px;
+            font-size: 21px;
+            line-height: 1.6;
+            color: #713e54;
+            animation: appear 0.7s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Привет! Это мой сайт? Ого. </h1>
+    <div class="container">
 
-    <p>Я только учусь создавать сайты.</p>
+        <div class="heart">♡</div>
 
-    <p>Даш прикинь, сааааааааааааааааайт.</p>
+        <h1>Добро пожаловать</h1>
+
+        <p class="subtitle">
+            В маленький уголок моего интернета
+        </p>
+
+        <button onclick="showSecret()">
+            интересно что тут?
+        </button>
+
+        <div id="secret">
+            ✨ А вот и ты дошла сюда...
+
+            Значит, тебе всё-таки стало интересно 👀
+        </div>
+
+    </div>
+
+    <script>
+        function showSecret() {
+            document.getElementById("secret").style.display = "block";
+        }
+    </script>
 
 </body>
-
 </html>
